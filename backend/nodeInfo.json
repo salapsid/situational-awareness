@@ -1,0 +1,66 @@
+{
+  "selfType": "demo",
+  "nodes": [
+    {
+      "ip": "localhost",
+      "port": "3000",
+      "data": {
+        "id": "localhost/3000",
+        "numerator": 5,
+        "denominator": 1,
+        "timePeriod": 1000,
+        "diameter": 4,
+        "delaybound": 2,
+        "tolerance": 0.01,
+        "neighbor": [
+          {
+            "ip": "localhost",
+            "port": "3001"
+          }
+        ]
+      }
+    },
+    {
+      "ip": "localhost",
+      "port": "3001",
+      "data": {
+        "id": "localhost/3001",
+        "numerator": 95,
+        "denominator": 1,
+        "timePeriod": 1000,
+        "diameter": 4,
+        "delaybound": 2,
+        "tolerance": 0.01,
+        "neighbor": [
+          {
+            "ip": "localhost",
+            "port": "3002"
+          }
+        ]
+      }
+    },
+    {
+      "ip": "localhost",
+      "port": "3002",
+      "data": {
+        "id": "localhost/3002",
+        "numerator": 50,
+        "denominator": 1,
+        "timePeriod": 1000,
+        "diameter": 4,
+        "delaybound": 2,
+        "tolerance": 0.01,
+        "neighbor": [
+          {
+            "ip": "localhost",
+            "port": "3000"
+          },
+          {
+            "ip": "localhost",
+            "port": "3001"
+          }
+        ]
+      }
+    }
+  ]
+}

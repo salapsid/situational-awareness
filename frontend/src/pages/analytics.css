@@ -1,0 +1,145 @@
+.analyticsGrid{
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    height: auto;
+    grid-template-areas: 
+        'navBar mainContent';
+    
+}
+
+.navBar{
+    grid-area: navBar;
+    border: 10px;
+    margin:10px 0 0 0
+}
+.mainContent{
+    grid-area: mainContent;
+    background-color:none;
+    height:auto;
+    border: 2px;
+    margin:10px 0 0 0
+    
+
+}
+
+.d3CompAutoRowsGrid{
+    display:grid;
+    grid-auto-rows: auto;
+    grid-gap:3em;
+    height:auto
+    
+    
+}
+
+.d3CompTwoColAutoRowsGrid{
+    display:grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap:20px;
+    height:auto
+    
+}
+
+/* networkCard is the class for the main Network display. It spans two (and thus all) columns of the 
+d3CompTwoColAutoRowsGrid class */
+.networkCard{
+    grid-column: 1/span 2;
+    display:grid;  
+    height:auto;
+    text-decoration: none;
+	background: whitesmoke;
+	border: 1px transparent;
+	border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+    
+    
+
+}
+
+/* nodeCard is the class for the main Network display. It spans one  column  of the 
+d3CompTwoColAutoRowsGrid class. */
+.nodeCard{
+    display:grid;  
+    height: auto;
+    grid-template-rows: 4em auto;
+    grid-template-columns: auto 2em;
+    grid-gap:5px;
+    padding: 10px;
+    text-decoration: none;
+	background: white;
+	border: 1px transparent;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+	color: hsl(0, 0%, 5%);
+    transition: all .2s;
+    grid-template-areas:
+    'nodeCardInfoDiv nodeCardkillDiv'
+    'nodeCardChartDiv nodeCardChartDiv';
+}
+
+.nodeCardInfoDiv{
+    grid-area:nodeCardInfoDiv;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -4px;
+    padding-top: none;
+ }
+ .nodeCardkillDiv{
+    grid-area:nodeCardkillDiv;
+    font-size: 20px;
+    font-weight: bold
+ }
+ .nodeCardChartDiv{
+     grid-area:nodeCardChartDiv;
+     display:grid;  
+     height: 100%;  
+  
+ }
+
+
+.cards a:focus,
+.cards a:hover {
+    outline: 1px solid hsl(0, 0%, 80%);
+}
+
+
+.myButton{
+    display:inline-block;
+    padding:0.2em 1.45em;
+    margin:0.1em;
+    border:0.15em solid #CCCCCC;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Segoe UI','Roboto',sans-serif;
+    font-weight:400;
+    color:#000000;
+    background-color:#CCCCCC;
+    text-align:center;
+    position:relative;
+    width:100%
+    }
+.myButton:hover{
+    border-color:#7a7a7a;
+    }
+    .myButton:active{
+    background-color:#999999;
+    }
+
+    .myInput{
+        display:inline-block;
+        padding:0.2em 1.45em;
+        margin:0.1em;
+        border:0.15em solid #CCCCCC;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Segoe UI','Roboto',sans-serif;
+        font-weight:400;
+        color:#000000;
+        background-color:white;
+        text-align:left;
+        position:relative;
+        width:100%
+        }
+
+
+

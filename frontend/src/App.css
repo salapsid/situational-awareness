@@ -1,0 +1,33 @@
+
+
+.appGrid{
+    padding-left: 15px;
+    padding-right: 50px;
+    display: grid;
+    grid-template-rows: 6em 1fr ;
+    grid-template-columns:  6em 1fr;
+    height: 100vh;
+    width: 95vw;
+	grid-gap:0px;
+	background-color:white;
+    grid-template-areas:
+    'logo header'
+    'appComponent appComponent'
+    
+    
+}
+
+.logo {
+	grid-area: logo;
+    background-color: rgb(43, 214, 226);
+ 
+}
+
+.header{
+	grid-area: header;
+    background-color: rgb(43, 214, 226);
+}
+.appComponent{
+    grid-area: appComponent;
+}
+

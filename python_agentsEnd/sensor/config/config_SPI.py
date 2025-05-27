@@ -1,0 +1,4 @@
+CONFIG_SPI = {
+	'SPI_PORT':  0,
+	'SPI_DEVICE': 0
+}
