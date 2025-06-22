@@ -1,22 +1,8 @@
-import React from "react"
+import React from "react";
+import logo from "../../../public/images/aelios_logo.png";
 
-import logo from '/public/images/aelios_logo.png'
+const Logo = ({ height = 50 }) => {
+  return <img src={logo} alt="logo" style={{ height }} />;
+};
 
-const imgStyle={
-    width: '100%',
-    height: '100%',
-   
-}
-
-
-const Logo=()=>{
-    return(
-        <>
-       
-       <img src={logo} alt="hello" style={imgStyle}></img>
-       
-       </>
-    )
-}
-
-export default Logo
+export default Logo;

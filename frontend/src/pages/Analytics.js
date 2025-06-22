@@ -139,12 +139,12 @@ const Analytics = (props) => {
   }, [dataObj]);
   return (
     <>
-      <div className="analyticsGrid">
+      <div className="container-fluid analyticsGrid">
         <div className="navBar">
          
           <div>
             <button
-              className="myButton"
+              className="btn btn-secondary w-100 mb-2"
               onClick={() => {
                 streamNtwrkButton(socket);
               }}
@@ -153,7 +153,7 @@ const Analytics = (props) => {
             </button>
             <div>
             <button
-              className="myButton"
+              className="btn btn-secondary w-100 mb-2"
               onClick={() => {
                 stopNtwrkUpdateButton(socket);
               }}
@@ -166,7 +166,7 @@ const Analytics = (props) => {
 
 
             <button
-              className="myButton"
+              className="btn btn-secondary w-100 mb-2"
               onClick={() => {
                 stopNtwrkUpdateButton(socket);
               }}
@@ -178,14 +178,14 @@ const Analytics = (props) => {
 
             <h2></h2>
             <input
-            className="myInput"
+            className="form-control mb-2"
               type="number"
               value={samplingPeriod}
               id="samplingPeriod"
               onChange={handleSamplingPeriodChange}
             ></input>
             <button
-              className="myButton"
+              className="btn btn-secondary w-100 mb-2"
               onClick={() => {
                 handleSubmitSamplingPeriod(socket);
               }}
@@ -194,7 +194,7 @@ const Analytics = (props) => {
             </button>
             
             <button
-              className="myButton"
+              className="btn btn-secondary w-100 mb-2"
               onClick={() => {
                 initializeDataButton(socket);
               }}
@@ -202,7 +202,7 @@ const Analytics = (props) => {
               Chart Data
             </button>
             <button
-              className="myButton"
+              className="btn btn-secondary w-100 mb-2"
               onClick={() => {
                 stopDataButton(socket);
               }}
