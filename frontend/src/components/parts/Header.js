@@ -39,6 +39,11 @@ const Header = () => {
                   Analytics
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/database">
+                  Database
+                </Link>
+              </li>
             </ul>
           </div>
         </HashRouter>

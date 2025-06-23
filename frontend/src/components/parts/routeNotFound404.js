@@ -10,6 +10,7 @@ class RouteNotFound extends React.Component{
                      <li><Link to='/'> Home </Link> </li>
                      <li><Link  to="/setup"> Setup </Link> </li>
                      <li><Link to='/analytics'> Analytics</Link> </li>
+                     <li><Link to='/database'> Database</Link> </li>
                      </ul>
              </HashRouter>
              
