@@ -61,8 +61,16 @@ async function _pushNetwork(collection) {
     // TODO: Implement error handlers and expose to top level API.
 }
 
-async function _removeNetwork() {
+  async function _removeNetwork() {
     await models.agent.deleteMany({});
+  }
+
+async function _addAgent(agent) {
+    return await models.agent.create(agent);
+}
+
+async function _deleteAgent(agent_id) {
+    return await models.agent.deleteOne({ id: agent_id });
 }
 
 async function _getNetwork() {
@@ -132,5 +140,7 @@ export default {
     _isNetworkAvailable: _isNetworkAvailable,
     _isValidAgent: _isValidAgent,
     _pushData: _pushData,
-    _getAgentIdFromIpPort: _getAgentIdFromIpPort
+    _getAgentIdFromIpPort: _getAgentIdFromIpPort,
+    _addAgent: _addAgent,
+    _deleteAgent: _deleteAgent
   }
