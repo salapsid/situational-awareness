@@ -19,6 +19,10 @@ async function api_pushNetwork(network_json) {
     await utils._pushNetwork(network_json);
 }
 
+async function api_addAgent(agent_json) {
+    return await utils._addAgent(agent_json);
+}
+
 async function api_getNetwork() {
     return await utils._getNetwork();
 }
@@ -55,6 +59,10 @@ async function api_getAgentIdFromIpPort(ip, port) {
     return await utils._getAgentIdFromIpPort(ip, port);
 }
 
+async function api_deleteAgent(agent_id) {
+    return await utils._deleteAgent(agent_id);
+}
+
 async function api_removeNetwork() {
     return await utils._removeNetwork();
 }
@@ -65,6 +73,7 @@ export default {
     api_connect: api_connect,
     api_disconnect: api_disconnect,
     api_pushNetwork: api_pushNetwork,
+    api_addAgent: api_addAgent,
     api_getNetwork: api_getNetwork,
     api_getAgent: api_getAgent,
     api_getAgentFields: api_getAgentFields,
@@ -74,5 +83,6 @@ export default {
     api_isValidAgent: api_isValidAgent,
     api_pushData: api_pushData,
     api_getAgentIdFromIpPort: api_getAgentIdFromIpPort,
-    api_removeNetwork: api_removeNetwork
+    api_removeNetwork: api_removeNetwork,
+    api_deleteAgent: api_deleteAgent
 }
