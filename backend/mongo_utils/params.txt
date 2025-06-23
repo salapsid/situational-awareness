@@ -1,4 +1,4 @@
-INSTALLATION_PATH="C:\Program Files\MongoDB\Server\4.4\bin\mongod.exe"
-DATA_PATH="C:\UMN\Aelios\situationalAwareness\backend\database\data\db"
-LOG_PATH="C:\UMN\Aelios\situationalAwareness\backend\database\data\logs\mongoDB.log"
+INSTALLATION_PATH=C:\Program Files\MongoDB\Server\8.0\bin\mongod.exe
+DATA_PATH=C:\Users\siddh\situational-awareness\backend\database\data\db
+LOG_PATH=C:\Users\siddh\situational-awareness\backend\database\data\logs\mongoDB.log
 PORT=3000
