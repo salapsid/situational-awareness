@@ -13,6 +13,7 @@ import CONFIG_DB from './config/cfg_database.js';
 import fs from 'fs';
 import cors from 'cors';
 import agentsRouter from './router/agents_rest_router.js';
+import itemsRouter from './router/items_rest_router.js';
 /******************************************************
  * STATIC VARIABLES: GNERAL
  *****************************************************/
@@ -104,6 +105,7 @@ function init_front_end() {
     own_port = Number(args.own_port);
     app_fe.use(express.json());
     app_fe.use('/api', agentsRouter);
+    app_fe.use('/api', itemsRouter);
     app_fe.use(express.static(CONFIG.FRONTEND_STATIC_FILE_LOCATION));
     feEventHandler.register_handler_fe(io_fe_namespace);
     server_fe.listen(own_port,async ()=>{
