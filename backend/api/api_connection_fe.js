@@ -4,7 +4,10 @@
 /******************************************************
  * IMPORTS
  *****************************************************/
-import UTILS_CONN_FE from '../frontEnd/connection/utils_conn.js';
+// Use consistent folder naming to avoid path resolution issues on
+// case-sensitive filesystems. The folder is named `frontend` in this
+// repository, so we import from that path.
+import UTILS_CONN_FE from '../frontend/connection/utils_conn.js';
 /******************************************************
  * API definitions
  *****************************************************/
