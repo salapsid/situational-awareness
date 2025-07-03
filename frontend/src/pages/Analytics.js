@@ -162,20 +162,6 @@ const Analytics = (props) => {
             </button>
             </div>
 
-
-
-
-            <button
-              className="btn btn-secondary w-100 mb-2"
-              onClick={() => {
-                stopNtwrkUpdateButton(socket);
-              }}
-            >
-              Stop Ntwrk Update
-            </button>
-
-
-
             <h2></h2>
             <input
             className="form-control mb-2"
