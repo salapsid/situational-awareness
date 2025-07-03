@@ -48,7 +48,10 @@ async function _connect (url, user_options=default_options) {
     try {
         await mongoose.connect(url, user_options);
     } catch (err) {
-        console.log(error);
+        // Log the actual error object. Using the wrong variable name
+        // would throw a `ReferenceError` and crash the server during
+        // connection failures.
+        console.log(err);
     }
 }
 
