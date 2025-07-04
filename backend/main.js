@@ -24,7 +24,12 @@ const LOG_PREFIX = "main: ";
  *****************************************************/
 const app_fe=express();
 const server_fe=http.createServer(app_fe);
-const io_fe=new socketIo(server_fe, cors());
+const io_fe = new socketIo(server_fe, {
+    cors: {
+        origin: '*',
+        methods: ['GET', 'POST']
+    }
+});
 const io_fe_namespace=io_fe.of(CONFIG.FRONTEND_NAMESPACE);
 let own_id = null;
 let own_ip = null;
