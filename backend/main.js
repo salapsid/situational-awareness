@@ -22,9 +22,21 @@ const LOG_PREFIX = "main: ";
 /******************************************************
  * STATIC VARIABLES: FRONTEND 
  *****************************************************/
-const app_fe=express();
-const server_fe=http.createServer(app_fe);
-const io_fe=new socketIo(server_fe, cors());
+const app_fe = express();
+// Allow cross-origin requests so the React frontend running on a different port
+// can communicate with the backend without connection resets.
+app_fe.use(cors());
+
+const server_fe = http.createServer(app_fe);
+const io_fe = new socketIo(server_fe, {
+    cors: {
+        origin: '*',
+        methods: ['GET', 'POST']
+    },
+    // Increase ping timeout values to avoid disconnect loops under heavy load
+    pingTimeout: 30000,
+    pingInterval: 10000
+});
 const io_fe_namespace=io_fe.of(CONFIG.FRONTEND_NAMESPACE);
 let own_id = null;
 let own_ip = null;
