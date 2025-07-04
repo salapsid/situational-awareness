@@ -1,5 +1,13 @@
 import React, { useRef, useEffect } from "react";
-import { select, forceSimulation, forceLink, forceManyBody, forceCenter } from "d3";
+import {
+  select,
+  forceSimulation,
+  forceLink,
+  forceManyBody,
+  forceCenter,
+  forceCollide,
+  zoom,
+} from "d3";
 
 const SimpleTopologyGraph = ({ nodes, links }) => {
   const svgRef = useRef(null);
@@ -7,16 +15,26 @@ const SimpleTopologyGraph = ({ nodes, links }) => {
   useEffect(() => {
     const svg = select(svgRef.current);
     svg.selectAll("*").remove();
-    const width = 600;
-    const height = 400;
-    svg.attr("width", width).attr("height", height);
+    const width = 800;
+    const height = 600;
+    const container = svg
+      .attr("width", width)
+      .attr("height", height)
+      .append("g");
+
+    svg.call(
+      zoom().scaleExtent([0.5, 4]).on("zoom", (event) => {
+        container.attr("transform", event.transform);
+      })
+    );
 
     const simulation = forceSimulation(nodes)
       .force("link", forceLink(links).id((d) => d.name).distance(100))
       .force("charge", forceManyBody().strength(-200))
+      .force("collide", forceCollide(20))
       .force("center", forceCenter(width / 2, height / 2));
 
-    const link = svg
+    const link = container
       .append("g")
       .selectAll("line")
       .data(links)
@@ -24,7 +42,7 @@ const SimpleTopologyGraph = ({ nodes, links }) => {
       .append("line")
       .attr("stroke", "#999");
 
-    const node = svg
+    const node = container
       .append("g")
       .selectAll("circle")
       .data(nodes)
@@ -33,7 +51,7 @@ const SimpleTopologyGraph = ({ nodes, links }) => {
       .attr("r", 10)
       .attr("fill", "#007bff");
 
-    const label = svg
+    const label = container
       .append("g")
       .selectAll("text")
       .data(nodes)

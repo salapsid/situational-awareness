@@ -82,7 +82,10 @@ const Setup = () => {
           </button>
         </div>
       </div>
-      <div className="d-flex justify-content-center">
+      <div
+        className="d-flex justify-content-center"
+        style={{ overflow: "auto" }}
+      >
         <SimpleTopologyGraph nodes={nodes} links={links} />
       </div>
     </div>
