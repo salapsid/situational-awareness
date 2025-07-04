@@ -108,11 +108,17 @@ async function _isValidAgent(agent_id) {
 }
 
 async function _pushData(agent_id, data) {
-    let col = await mongoose.connection.modelNames();
-    if (false == col.includes(String(agent_id))) {
-        models.agent_data[agent_id] = models._createPowerDataModel('agent_'+String(agent_id));
+    // Lazily create a model for this agent's data collection if it doesn't
+    // already exist. Use a consistent model name so we don't trigger
+    // OverwriteModelError on subsequent calls.
+    if (!models.agent_data[agent_id]) {
+        const modelName = 'agent_' + String(agent_id);
+        models.agent_data[agent_id] = models._createPowerDataModel(modelName);
     }
-    let res = await models.agent_data[agent_id].insertMany(data);
+    // Mongoose#insertMany expects an array. If a single object is provided we
+    // convert it to an array for convenience.
+    const docs = Array.isArray(data) ? data : [data];
+    const res = await models.agent_data[agent_id].insertMany(docs);
     return res;
 }
 
@@ -121,8 +127,8 @@ async function _getAgentIdFromIpPort(ip, port) {
     //const regex = /[^:]*$/;
     //const port = Number(uri.match(regex)[0]);
     //const query = '/'+String(ip)+'/i';
-    const agent =  await models.agent.find({ ip: String(ip), port: Number(port)}).exec();
-    if ((null != agent) || (0 != agent.length)) {
+    const agent = await models.agent.find({ ip: String(ip), port: Number(port) }).exec();
+    if (agent && agent.length > 0) {
         return agent[0].id;
     }
     return null;
