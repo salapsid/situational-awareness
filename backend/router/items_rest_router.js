@@ -1,61 +1,77 @@
 import express from 'express';
+import Item from '../database/items_schema.js';
 
 const router = express.Router();
 
-// In-memory items storage
-let items = [];
-
 // Get all items
-router.get('/items', (req, res) => {
-  res.json(items);
+router.get('/items', async (req, res) => {
+  try {
+    const items = await Item.find({});
+    res.json(items);
+  } catch (err) {
+    res.status(500).json({ error: String(err) });
+  }
 });
 
 // Get a single item by id
-router.get('/items/:id', (req, res) => {
-  const item = items.find(i => String(i.id) === String(req.params.id));
-  if (!item) {
-    res.status(404).json({ error: 'Item not found' });
-  } else {
+router.get('/items/:id', async (req, res) => {
+  try {
+    const item = await Item.findOne({ id: req.params.id });
+    if (!item) {
+      return res.status(404).json({ error: 'Item not found' });
+    }
     res.json(item);
+  } catch (err) {
+    res.status(500).json({ error: String(err) });
   }
 });
 
 // Create new item
-router.post('/items', (req, res) => {
+router.post('/items', async (req, res) => {
   const { id, name } = req.body || {};
   if (id === undefined || name === undefined) {
     return res.status(400).json({ error: 'Missing id or name' });
   }
-  const existing = items.find(i => String(i.id) === String(id));
-  if (existing) {
-    return res.status(409).json({ error: 'Item already exists' });
+  try {
+    const created = await Item.create({ id, name });
+    res.status(201).json(created);
+  } catch (err) {
+    if (err.code === 11000) {
+      return res.status(409).json({ error: 'Item already exists' });
+    }
+    res.status(500).json({ error: String(err) });
   }
-  const newItem = { id, name };
-  items.push(newItem);
-  res.status(201).json(newItem);
 });
 
 // Update item
-router.put('/items/:id', (req, res) => {
+router.put('/items/:id', async (req, res) => {
   const { name } = req.body || {};
-  const idx = items.findIndex(i => String(i.id) === String(req.params.id));
-  if (idx === -1) {
-    return res.status(404).json({ error: 'Item not found' });
+  try {
+    const updated = await Item.findOneAndUpdate(
+      { id: req.params.id },
+      { name },
+      { new: true }
+    );
+    if (!updated) {
+      return res.status(404).json({ error: 'Item not found' });
+    }
+    res.json(updated);
+  } catch (err) {
+    res.status(500).json({ error: String(err) });
   }
-  if (name !== undefined) {
-    items[idx].name = name;
-  }
-  res.json(items[idx]);
 });
 
 // Delete item
-router.delete('/items/:id', (req, res) => {
-  const idx = items.findIndex(i => String(i.id) === String(req.params.id));
-  if (idx === -1) {
-    return res.status(404).json({ error: 'Item not found' });
+router.delete('/items/:id', async (req, res) => {
+  try {
+    const removed = await Item.findOneAndDelete({ id: req.params.id });
+    if (!removed) {
+      return res.status(404).json({ error: 'Item not found' });
+    }
+    res.json(removed);
+  } catch (err) {
+    res.status(500).json({ error: String(err) });
   }
-  const removed = items.splice(idx, 1)[0];
-  res.json(removed);
 });
 
 export default router;

@@ -113,6 +113,10 @@ const Database = () => {
           ))}
         </tbody>
       </table>
+      <h5 className="mt-4">Raw Documents</h5>
+      <pre data-testid="raw-documents">
+        {JSON.stringify(items, null, 2)}
+      </pre>
     </div>
   );
 };
