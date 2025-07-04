@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -14,7 +14,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -27,7 +27,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -40,7 +40,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -53,7 +53,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -66,7 +66,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -79,7 +79,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -92,7 +92,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -105,7 +105,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -118,7 +118,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -131,7 +131,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -144,7 +144,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -157,7 +157,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -170,7 +170,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -183,7 +183,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -196,7 +196,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -209,7 +209,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -222,7 +222,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -235,7 +235,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -248,7 +248,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -261,7 +261,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -274,7 +274,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -287,7 +287,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -300,7 +300,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -313,7 +313,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -326,7 +326,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -339,7 +339,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -352,7 +352,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -365,7 +365,7 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
@@ -378,50 +378,11 @@
       "out_file": "./example_demo/logs/out_log.log"
     },
     {
-      "name": "demo_case33bw_mod.json",
+      "name": "demo_case30.json",
       "script": "server.js",
       "exec_mode": "fork",
       "cwd": "../",
       "args": "30 localhost 3029",
-      "instances": 1,
-      "autorestart": true,
-      "watch": false,
-      "max_memory_restart": "1G",
-      "error_file": "./example_demo/logs/error_logs.log",
-      "out_file": "./example_demo/logs/out_log.log"
-    },
-    {
-      "name": "demo_case33bw_mod.json",
-      "script": "server.js",
-      "exec_mode": "fork",
-      "cwd": "../",
-      "args": "31 localhost 3030",
-      "instances": 1,
-      "autorestart": true,
-      "watch": false,
-      "max_memory_restart": "1G",
-      "error_file": "./example_demo/logs/error_logs.log",
-      "out_file": "./example_demo/logs/out_log.log"
-    },
-    {
-      "name": "demo_case33bw_mod.json",
-      "script": "server.js",
-      "exec_mode": "fork",
-      "cwd": "../",
-      "args": "32 localhost 3031",
-      "instances": 1,
-      "autorestart": true,
-      "watch": false,
-      "max_memory_restart": "1G",
-      "error_file": "./example_demo/logs/error_logs.log",
-      "out_file": "./example_demo/logs/out_log.log"
-    },
-    {
-      "name": "demo_case33bw_mod.json",
-      "script": "server.js",
-      "exec_mode": "fork",
-      "cwd": "../",
-      "args": "33 localhost 3032",
       "instances": 1,
       "autorestart": true,
       "watch": false,

@@ -10,5 +10,5 @@ export default {
     AGENT_NAMESPACE: "agent_namespace",
     FRONTEND_NAMESPACE: "frontend_namespace",
     FRONTEND_STATIC_FILE_LOCATION: "../frontend/public",
-    EXAMPLE_NETWORK: "./example_networks/case33bw_mod.json"
+    EXAMPLE_NETWORK: "./example_networks/case30.json"
 }
