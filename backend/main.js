@@ -34,8 +34,9 @@ const io_fe = new socketIo(server_fe, {
         methods: ['GET', 'POST']
     },
     // Increase ping timeout values to avoid disconnect loops under heavy load
-    pingTimeout: 30000,
-    pingInterval: 10000
+    // when the backend is busy with database operations
+    pingTimeout: 60000,
+    pingInterval: 25000
 });
 const io_fe_namespace=io_fe.of(CONFIG.FRONTEND_NAMESPACE);
 let own_id = null;
