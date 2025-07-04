@@ -5,7 +5,7 @@
 * **example**: "npm start backendId localhost 8080" will give the backend an ID="backendId" and start a server on "http"//localhost:8080"
 	for frontends to connect to.
 	* **Default ID="backend", default ip="localhost", default port=8080
-* prerequisite: Please start MongoDB before running backend. MongoDB configuration is located in "./backend/config/cfg_database.js".
+* Data for the database tab is stored locally in `./backend/database/items_data.json` and does not require a running MongoDB instance.
 
 ## CONNECTION PROCEDURE: FRONTEND
 Please use the following configuration to connect to backend as a client

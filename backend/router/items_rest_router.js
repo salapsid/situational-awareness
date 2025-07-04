@@ -1,12 +1,12 @@
 import express from 'express';
-import Item from '../database/items_schema.js';
+import * as store from '../database/items_store.js';
 
 const router = express.Router();
 
 // Get all items
-router.get('/items', async (req, res) => {
+router.get('/items', (req, res) => {
   try {
-    const items = await Item.find({});
+    const items = store.getAll();
     res.json(items);
   } catch (err) {
     res.status(500).json({ error: String(err) });
@@ -14,9 +14,9 @@ router.get('/items', async (req, res) => {
 });
 
 // Get a single item by id
-router.get('/items/:id', async (req, res) => {
+router.get('/items/:id', (req, res) => {
   try {
-    const item = await Item.findOne({ id: req.params.id });
+    const item = store.get(req.params.id);
     if (!item) {
       return res.status(404).json({ error: 'Item not found' });
     }
@@ -27,31 +27,27 @@ router.get('/items/:id', async (req, res) => {
 });
 
 // Create new item
-router.post('/items', async (req, res) => {
+router.post('/items', (req, res) => {
   const { id, name } = req.body || {};
-  if (id === undefined || name === undefined) {
+  if (!id || !name) {
     return res.status(400).json({ error: 'Missing id or name' });
   }
   try {
-    const created = await Item.create({ id, name });
-    res.status(201).json(created);
-  } catch (err) {
-    if (err.code === 11000) {
+    if (store.get(id)) {
       return res.status(409).json({ error: 'Item already exists' });
     }
+    const created = store.add({ id, name });
+    res.status(201).json(created);
+  } catch (err) {
     res.status(500).json({ error: String(err) });
   }
 });
 
 // Update item
-router.put('/items/:id', async (req, res) => {
+router.put('/items/:id', (req, res) => {
   const { name } = req.body || {};
   try {
-    const updated = await Item.findOneAndUpdate(
-      { id: req.params.id },
-      { name },
-      { new: true }
-    );
+    const updated = store.update(req.params.id, { name });
     if (!updated) {
       return res.status(404).json({ error: 'Item not found' });
     }
@@ -62,9 +58,9 @@ router.put('/items/:id', async (req, res) => {
 });
 
 // Delete item
-router.delete('/items/:id', async (req, res) => {
+router.delete('/items/:id', (req, res) => {
   try {
-    const removed = await Item.findOneAndDelete({ id: req.params.id });
+    const removed = store.remove(req.params.id);
     if (!removed) {
       return res.status(404).json({ error: 'Item not found' });
     }

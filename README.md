@@ -9,7 +9,7 @@ From the backend dir
 ------------------
 npm install
 npm start
-
+The backend stores example data in `backend/database/items_data.json` so no separate database server is required.
 From the frontend dir
 ------------------
 npm install

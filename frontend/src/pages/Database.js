@@ -91,28 +91,39 @@ const Database = () => {
       <table className="table table-bordered">
         <thead>
           <tr>
+            <th>#</th>
             <th>ID</th>
             <th>Name</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>
-                <button
-                  className="btn btn-danger btn-sm"
-                  onClick={() => deleteItem(item.id)}
-                >
-                  Delete
-                </button>
+          {items.length === 0 ? (
+            <tr>
+              <td colSpan="4" className="text-center">
+                No items
               </td>
             </tr>
-          ))}
+          ) : (
+            items.map((item, idx) => (
+              <tr key={item.id}>
+                <td>{idx + 1}</td>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => deleteItem(item.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
+      <div className="mt-2">Total items: {items.length}</div>
       <h5 className="mt-4">Raw Documents</h5>
       <pre data-testid="raw-documents">
         {JSON.stringify(items, null, 2)}
