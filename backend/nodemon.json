@@ -1,0 +1,8 @@
+{
+  "ignore": [
+    "database/data/*",
+    "database/data/**",
+    "algorithms/static_network_reconstruction/dataset/*",
+    "algorithms/static_network_reconstruction/dataset/**"
+  ]
+}
